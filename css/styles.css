@@ -1,0 +1,199 @@
+/* google font */
+@import url('https://fonts.googleapis.com/css2?family=Oxygen&display=swap');
+
+:root {
+    /* colors -> red green blue in hexa */
+    --black: #171321;
+    --dkblue: #0d314b;
+    --plum: #4b0d49;
+    --hotmag: #ff17e4;
+    --megenta: #e310cb;
+    --aqua: #86fbfb;
+    --white: #f7f8fa;
+    
+    /* 1 rem == 16 px
+    100% ==16px 
+    1 em == 16 px -> width= M */
+    --font-size: 1.3rem;
+    --mono: "Oxygen mono", monospace;
+    --sans: Oxygen, sans-serif;
+
+
+
+}
+
+/* each element has : padding : space between element & border
+                      border : width element
+                      margen : space between each element 
+                   all of them have:    left top right bottom
+                      */
+
+/* SASS */
+
+/* generic styles for the page  */
+
+/* rule */
+/* selector ex: body*/
+body{
+    /* property: value */
+    /* padding: 10 10; */
+    /* padding: 10 == 10 10 10 10; */
+    padding: 0;
+    margin: 0;
+    font-family: var(--sans);
+    background-color: var(--black);
+    color: var(--white);
+    font-size: var(--font-size);
+}
+
+h1 , h2 , h3{
+    margin: 0;
+
+}
+
+a{
+    color: var(--megenta);
+    
+}
+
+/* sudo class */
+a:hover{
+   color: var(--hotmag);
+   text-decoration: none;
+
+
+}
+
+img{
+    width: 100%;
+}
+/* for id section*/
+#intro{
+    /* padding: 4rem 1rem 10rem 1rem;
+    padding-bottom: 10rem;
+    max-width: 1200px; */
+    /* max-width: 0 auto; */
+    padding: 4rem 1rem 10rem 1rem;
+  padding-bottom: 10rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* for id section -> p */
+#intro p{
+    font-size: 1rem;
+    /* space between lines */
+    line-height: 1.5;
+
+}
+/* in css casecading rules
+    id class/attribute tag
+    #
+    (1,0,0) --> heigh
+    p.welcome 
+    (0,1,1) 
+    */
+/* for id section -> p class: "name" */
+#intro .name{
+    font-family: var(--mono);
+    font-size: 1rem;
+}
+
+.name span{
+    font-family: var(--sans);
+    font-size: 4rem;
+    color: var(--aqua);
+    display: block;
+
+}
+
+#intro h2{
+    font-size: 4rem;
+
+}
+
+/* header nav section */
+
+nav{
+    font-family: var(--sans);
+    font-size: 80%;
+    padding: 1rem;
+}
+
+nav h1 a{
+    font-family: var(--sans);
+
+}
+
+nav ul{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    /* table --> flex box : x y  control elements with flexability
+                grid : 
+                */
+    display: flex;
+    /* في حالة العنصر كبير ممكن تنزل تحت */
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    /* space between items */
+    gap: 2rem ;
+
+}
+
+nav li:first-child{
+    flex-basis: 100%;
+    text-align: center;
+}
+
+/* nav--> class*all="fa- */
+nav [class*="fa-"]{
+    font-size: 150%;
+    color: var(--aqua);
+}
+/* (0,1,2) */
+nav h1 [class*="fa-"] {
+    font-size: 100%;
+    color: var(--aqua);
+}
+
+nav a{
+    color: var(--white);
+    text-decoration: none;
+    display: block;
+}
+
+nav a:hover, nav[class*="fa-"] :hover{
+    color:var(--megenta);
+
+
+}
+
+.button{
+    background-color:var(--megenta);
+    color: white;
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+
+.button:hover{
+    color:white;
+    background-color: var(--hotmag);
+
+}
+
+@media(min-width: 850px){
+    nav{
+        max-width: 1200px;
+        margin: 0 auto;
+
+    }
+    nav li:first-child{
+        flex-basis: auto;
+        text-align: left;
+        margin-right: auto;
+    }
+}
+
+
